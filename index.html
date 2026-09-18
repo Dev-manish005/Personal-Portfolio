@@ -1,92 +1,239 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Manish Pradhan | Portfolio</title>
 </head>
 
 <body>
-    <header>
-        <img src="images/profile.jfif" alt="Profile picture of Manish" width="200">
-        <h1>Manish Pradhan</h1>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+
+        <div class="header-container">
+
+            <div class="profile">
+                <img
+                    src="images/profile.jfif"
+                    alt="Profile picture of Manish Pradhan"
+                    class="profile-image"
+                >
+
+                <div class="profile-info">
+                    <h1>Manish Pradhan</h1>
+                    <p>Full Stack Developer</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navbar" aria-label="Main Navigation">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+
     </header>
 
+
+    <!-- Main Content -->
     <main>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Hi, I'm Manish Pradhan, a B.Sc. Information Technology graduate from the University of Mumbai. I am
-                passionate about web development and enjoy building websites and applications that are practical,
-                responsive, and user-friendly.
-            </p>
+        <!-- About Section -->
+        <section id="about" class="section about-section">
 
-            <p>
-                I enjoy learning new technologies and
-                building practical projects.
-            </p>
+            <div class="container">
 
-            <p>
-                I am currently looking for opportunities where I can apply my technical skills, gain industry
-                experience, learn from experienced developers, and grow as a Full Stack Developer.
-            </p>
+                <p class="section-label">ABOUT ME</p>
+
+                <h2>About Me</h2>
+
+                <p>
+                    Hi, I'm <strong>Manish Pradhan</strong>, a B.Sc. Information
+                    Technology graduate from the University of Mumbai. I am
+                    passionate about web development and enjoy building websites
+                    and applications that are practical, responsive, and
+                    user-friendly.
+                </p>
+
+                <p>
+                    I enjoy learning new technologies and building practical
+                    projects that help me improve my technical and problem-solving
+                    skills.
+                </p>
+
+                <p>
+                    I am currently looking for opportunities where I can apply
+                    my technical skills, gain industry experience, learn from
+                    experienced developers, and grow as a Full Stack Developer.
+                </p>
+
+            </div>
 
         </section>
 
-        <section id="skills">
-            <h2>My Skills</h2>
 
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
-            </ul>
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+
+            <div class="container">
+
+                <p class="section-label">WHAT I KNOW</p>
+
+                <h2>My Skills</h2>
+
+                <div class="skills-list">
+
+                    <div class="skill-card">
+                        <h3>HTML</h3>
+                        <p>Web Structure</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>CSS</h3>
+                        <p>Styling & Layout</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>JavaScript</h3>
+                        <p>Web Interactivity</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>React</h3>
+                        <p>Frontend Development</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Node.js</h3>
+                        <p>Backend Development</p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
 
-            <form>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
 
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <div class="container">
 
-                <br><br>
+                <p class="section-label">GET IN TOUCH</p>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <h2>Contact Me</h2>
 
-                <br><br>
+                <p class="contact-intro">
+                    Have a question or want to work together? Feel free to
+                    send me a message.
+                </p>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                <form class="contact-form">
 
-                <br><br>
+                    <div class="form-group">
+                        <label for="name">Name</label>
 
-                <button type="submit">Send Message</button>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
 
-            </form>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message"
+                            required
+                        ></textarea>
+                    </div>
+
+
+                    <button type="submit" class="submit-button">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
 
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Manish Pradhan. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 Manish Pradhan. All rights reserved.
+            </p>
+
+            <div class="social-links">
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
     </footer>
-
-
 
 </body>
 
 </html>
+```

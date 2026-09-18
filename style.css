@@ -1,0 +1,615 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   CSS VARIABLES / COLOR SCHEME
+======================================== */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+
+    --secondary-color: #0f172a;
+
+    --background-color: #f8fafc;
+    --section-background: #ffffff;
+
+    --text-color: #334155;
+    --light-text: #64748b;
+
+    --border-color: #e2e8f0;
+
+    --white: #ffffff;
+
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+    --transition: 0.3s ease;
+}
+
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   COMMON CONTAINER
+======================================== */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 20px 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.header-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* ========================================
+   PROFILE
+======================================== */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.profile-image {
+    width: 70px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--primary-color);
+
+    transition: var(--transition);
+}
+
+
+.profile-image:hover {
+    transform: scale(1.08);
+}
+
+
+.profile-info h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+.profile-info p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.navbar a {
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    position: relative;
+
+    transition: var(--transition);
+}
+
+
+/* Navigation Hover Effect */
+
+.navbar a:hover {
+    color: #60a5fa;
+}
+
+
+/* Underline Hover Effect */
+
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #60a5fa;
+
+    transition: var(--transition);
+}
+
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   COMMON SECTION STYLING
+======================================== */
+
+.section {
+    padding: 90px 0;
+}
+
+
+.section h2 {
+    color: var(--secondary-color);
+
+    font-size: 2.2rem;
+
+    margin-bottom: 25px;
+}
+
+
+.section-label {
+    color: var(--primary-color);
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+.about-section {
+    background-color: var(--section-background);
+}
+
+
+.about-section .container {
+    max-width: 850px;
+}
+
+
+.about-section p:not(.section-label) {
+    margin-bottom: 18px;
+
+    color: var(--text-color);
+
+    font-size: 1rem;
+}
+
+
+.about-section strong {
+    color: var(--primary-color);
+}
+
+
+/* ========================================
+   SKILLS SECTION
+======================================== */
+
+.skills-section {
+    background-color: var(--background-color);
+}
+
+
+.skills-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+
+.skill-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+
+/* Skill Card Hover */
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+}
+
+
+.skill-card h3 {
+    color: var(--secondary-color);
+
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
+}
+
+
+.skill-card p {
+    color: var(--light-text);
+
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section {
+    background-color: var(--section-background);
+}
+
+
+.contact-intro {
+    color: var(--light-text);
+
+    margin-bottom: 30px;
+}
+
+
+.contact-form {
+    max-width: 650px;
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    color: var(--secondary-color);
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+/* Input & Textarea */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    background-color: var(--white);
+
+    color: var(--text-color);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+/* Input Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 150px;
+}
+
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+.submit-button {
+    background-color: var(--primary-color);
+
+    color: var(--white);
+
+    border: none;
+
+    padding: 13px 28px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+/* Button Hover */
+
+.submit-button:hover {
+    background-color: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* Button Active */
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    background-color: var(--secondary-color);
+
+    color: #cbd5e1;
+
+    padding: 30px 0;
+}
+
+
+.footer .container {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+
+.social-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+
+.social-links a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+
+.social-links a:hover {
+    color: #60a5fa;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .skills-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    .header-container {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+    }
+
+
+    /* Profile */
+
+    .profile {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        gap: 20px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 65px 0;
+    }
+
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+
+    /* Skills */
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Footer */
+
+    .footer .container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 480px) {
+
+    .container,
+    .header-container {
+        width: 92%;
+    }
+
+
+    .profile-info h1 {
+        font-size: 1.3rem;
+    }
+
+
+    .navbar {
+        gap: 15px;
+    }
+
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+
+    .section {
+        padding: 50px 0;
+    }
+
+
+    .section h2 {
+        font-size: 1.6rem;
+    }
+
+
+    .submit-button {
+        width: 100%;
+    }
+
+}
+
