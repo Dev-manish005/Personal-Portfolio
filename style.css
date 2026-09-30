@@ -1,4 +1,7 @@
 
+/* ========================================
+   CSS RESET
+======================================== */
 
 * {
     margin: 0;
@@ -8,7 +11,7 @@
 
 
 /* ========================================
-   CSS VARIABLES / COLOR SCHEME
+   CSS VARIABLES
 ======================================== */
 
 :root {
@@ -27,6 +30,9 @@
 
     --white: #ffffff;
 
+    --error-color: #dc2626;
+    --success-color: #16a34a;
+
     --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 
     --transition: 0.3s ease;
@@ -34,7 +40,7 @@
 
 
 /* ========================================
-   GLOBAL STYLES
+   GLOBAL
 ======================================== */
 
 html {
@@ -43,19 +49,45 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
+
     background-color: var(--background-color);
+
     color: var(--text-color);
+
     line-height: 1.7;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+body.dark-mode {
+    --background-color: #0f172a;
+    --section-background: #1e293b;
+
+    --secondary-color: #f8fafc;
+
+    --text-color: #cbd5e1;
+    --light-text: #94a3b8;
+
+    --border-color: #334155;
+
+    --white: #1e293b;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 
 /* ========================================
-   COMMON CONTAINER
+   CONTAINER
 ======================================== */
 
 .container {
     width: 90%;
+
     max-width: 1100px;
+
     margin: 0 auto;
 }
 
@@ -66,27 +98,36 @@ body {
 
 .header {
     background-color: var(--secondary-color);
+
     color: var(--white);
+
     padding: 20px 0;
 
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.15);
 }
 
 
 .header-container {
     width: 90%;
+
     max-width: 1100px;
+
     margin: 0 auto;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
-    gap: 30px;
+    gap: 25px;
 }
 
 
@@ -96,13 +137,16 @@ body {
 
 .profile {
     display: flex;
+
     align-items: center;
+
     gap: 15px;
 }
 
 
 .profile-image {
     width: 70px;
+
     height: 70px;
 
     object-fit: cover;
@@ -110,6 +154,8 @@ body {
     border-radius: 50%;
 
     border: 3px solid var(--primary-color);
+
+    cursor: pointer;
 
     transition: var(--transition);
 }
@@ -122,13 +168,16 @@ body {
 
 .profile-info h1 {
     font-size: 1.5rem;
+
     font-weight: 700;
+
     line-height: 1.2;
 }
 
 
 .profile-info p {
     color: #cbd5e1;
+
     font-size: 0.9rem;
 }
 
@@ -139,7 +188,9 @@ body {
 
 .navbar {
     display: flex;
+
     align-items: center;
+
     gap: 30px;
 }
 
@@ -150,6 +201,7 @@ body {
     text-decoration: none;
 
     font-size: 1rem;
+
     font-weight: 500;
 
     position: relative;
@@ -158,14 +210,11 @@ body {
 }
 
 
-/* Navigation Hover Effect */
-
-.navbar a:hover {
+.navbar a:hover,
+.navbar a.active {
     color: #60a5fa;
 }
 
-
-/* Underline Hover Effect */
 
 .navbar a::after {
     content: "";
@@ -173,9 +222,11 @@ body {
     position: absolute;
 
     left: 0;
+
     bottom: -6px;
 
     width: 0;
+
     height: 2px;
 
     background-color: #60a5fa;
@@ -184,13 +235,46 @@ body {
 }
 
 
-.navbar a:hover::after {
+.navbar a:hover::after,
+.navbar a.active::after {
     width: 100%;
 }
 
 
 /* ========================================
-   COMMON SECTION STYLING
+   THEME TOGGLE
+======================================== */
+
+.theme-toggle {
+    border: none;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    color: var(--white);
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.1rem;
+
+    transition: var(--transition);
+}
+
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+
+    transform: rotate(15deg);
+}
+
+
+/* ========================================
+   SECTIONS
 ======================================== */
 
 .section {
@@ -211,6 +295,7 @@ body {
     color: var(--primary-color);
 
     font-size: 0.85rem;
+
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -220,7 +305,7 @@ body {
 
 
 /* ========================================
-   ABOUT SECTION
+   ABOUT
 ======================================== */
 
 .about-section {
@@ -248,7 +333,67 @@ body {
 
 
 /* ========================================
-   SKILLS SECTION
+   AVAILABILITY STATUS
+======================================== */
+
+.availability-box {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background-color: rgba(22, 163, 74, 0.1);
+
+    color: var(--success-color);
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+}
+
+
+.status-dot {
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background-color: var(--success-color);
+
+    animation: pulse 1.5s infinite;
+}
+
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================================
+   SKILLS
 ======================================== */
 
 .skills-section {
@@ -268,7 +413,7 @@ body {
 
 
 .skill-card {
-    background-color: var(--white);
+    background-color: var(--section-background);
 
     border: 1px solid var(--border-color);
 
@@ -281,17 +426,18 @@ body {
     box-shadow: var(--shadow);
 
     transition: var(--transition);
+
+    cursor: pointer;
 }
 
-
-/* Skill Card Hover */
 
 .skill-card:hover {
     transform: translateY(-8px);
 
     border-color: var(--primary-color);
 
-    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.12);
 }
 
 
@@ -312,7 +458,7 @@ body {
 
 
 /* ========================================
-   CONTACT SECTION
+   CONTACT
 ======================================== */
 
 .contact-section {
@@ -348,8 +494,6 @@ body {
 }
 
 
-/* Input & Textarea */
-
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -360,7 +504,7 @@ body {
 
     border-radius: 8px;
 
-    background-color: var(--white);
+    background-color: var(--section-background);
 
     color: var(--text-color);
 
@@ -374,17 +518,14 @@ body {
 }
 
 
-/* Input Focus */
-
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--primary-color);
 
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-
-/* Textarea */
 
 .form-group textarea {
     resize: vertical;
@@ -394,7 +535,45 @@ body {
 
 
 /* ========================================
-   SUBMIT BUTTON
+   VALIDATION
+======================================== */
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--error-color);
+}
+
+
+.form-group input.success,
+.form-group textarea.success {
+    border-color: var(--success-color);
+}
+
+
+.error-message {
+    display: block;
+
+    min-height: 22px;
+
+    margin-top: 5px;
+
+    color: var(--error-color);
+
+    font-size: 0.8rem;
+}
+
+
+.success-message {
+    margin-top: 18px;
+
+    color: var(--success-color);
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   BUTTON
 ======================================== */
 
 .submit-button {
@@ -420,18 +599,15 @@ body {
 }
 
 
-/* Button Hover */
-
 .submit-button:hover {
     background-color: var(--primary-dark);
 
     transform: translateY(-3px);
 
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
-
-/* Button Active */
 
 .submit-button:active {
     transform: translateY(0);
@@ -489,7 +665,100 @@ body {
 
 
 /* ========================================
-   RESPONSIVE DESIGN
+   IMAGE MODAL
+======================================== */
+
+.image-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 2000;
+}
+
+
+.image-modal.show {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.image-modal img {
+    max-width: 90%;
+
+    max-height: 80vh;
+
+    border-radius: 15px;
+
+    border: 4px solid var(--white);
+
+    transform: scale(0.8);
+
+    transition: 0.3s ease;
+}
+
+
+.image-modal.show img {
+    transform: scale(1);
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: var(--white);
+
+    color: #111827;
+
+    font-size: 2rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+.modal-close:hover {
+    background-color: var(--primary-color);
+
+    color: var(--white);
+
+    transform: rotate(90deg);
+}
+
+
+/* ========================================
    TABLET
 ======================================== */
 
@@ -503,13 +772,10 @@ body {
 
 
 /* ========================================
-   RESPONSIVE DESIGN
    MOBILE
 ======================================== */
 
 @media (max-width: 768px) {
-
-    /* Header */
 
     .header-container {
         flex-direction: column;
@@ -520,16 +786,12 @@ body {
     }
 
 
-    /* Profile */
-
     .profile {
         flex-direction: column;
 
         gap: 10px;
     }
 
-
-    /* Navigation */
 
     .navbar {
         gap: 20px;
@@ -540,7 +802,12 @@ body {
     }
 
 
-    /* Sections */
+    .theme-toggle {
+        width: 38px;
+
+        height: 38px;
+    }
+
 
     .section {
         padding: 65px 0;
@@ -552,14 +819,10 @@ body {
     }
 
 
-    /* Skills */
-
     .skills-list {
         grid-template-columns: 1fr;
     }
 
-
-    /* Footer */
 
     .footer .container {
         flex-direction: column;
@@ -571,7 +834,7 @@ body {
 
 
 /* ========================================
-   SMALL MOBILE DEVICES
+   SMALL MOBILE
 ======================================== */
 
 @media (max-width: 480px) {
@@ -609,6 +872,16 @@ body {
 
     .submit-button {
         width: 100%;
+    }
+
+
+    .image-modal {
+        padding: 15px;
+    }
+
+
+    .image-modal img {
+        max-width: 95%;
     }
 
 }

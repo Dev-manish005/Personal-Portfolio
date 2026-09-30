@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet"
@@ -21,40 +23,70 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- ================================
+         HEADER
+    ================================= -->
+
     <header class="header">
 
         <div class="header-container">
 
             <div class="profile">
+
                 <img
                     src="images/profile.jfif"
                     alt="Profile picture of Manish Pradhan"
                     class="profile-image"
+                    id="profileImage"
                 >
 
                 <div class="profile-info">
                     <h1>Manish Pradhan</h1>
                     <p>Full Stack Developer</p>
                 </div>
+
             </div>
 
+
             <!-- Navigation -->
+
             <nav class="navbar" aria-label="Main Navigation">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+
+                <a href="#about" class="nav-link active">About</a>
+
+                <a href="#skills" class="nav-link">Skills</a>
+
+                <a href="#contact" class="nav-link">Contact</a>
+
             </nav>
+
+
+            <!-- Dark Mode Button -->
+
+            <button
+                type="button"
+                id="themeToggle"
+                class="theme-toggle"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
 
         </div>
 
     </header>
 
 
-    <!-- Main Content -->
+    <!-- ================================
+         MAIN CONTENT
+    ================================= -->
+
     <main>
 
-        <!-- About Section -->
+        <!-- ================================
+             ABOUT SECTION
+        ================================= -->
+
         <section id="about" class="section about-section">
 
             <div class="container">
@@ -64,17 +96,17 @@
                 <h2>About Me</h2>
 
                 <p>
-                    Hi, I'm <strong>Manish Pradhan</strong>, a B.Sc. Information
-                    Technology graduate from the University of Mumbai. I am
-                    passionate about web development and enjoy building websites
-                    and applications that are practical, responsive, and
-                    user-friendly.
+                    Hi, I'm <strong>Manish Pradhan</strong>, a B.Sc.
+                    Information Technology graduate from the University of
+                    Mumbai. I am passionate about web development and enjoy
+                    building websites and applications that are practical,
+                    responsive, and user-friendly.
                 </p>
 
                 <p>
                     I enjoy learning new technologies and building practical
-                    projects that help me improve my technical and problem-solving
-                    skills.
+                    projects that help me improve my technical and
+                    problem-solving skills.
                 </p>
 
                 <p>
@@ -83,12 +115,28 @@
                     experienced developers, and grow as a Full Stack Developer.
                 </p>
 
+
+                <!-- Dynamic Status -->
+
+                <div class="availability-box">
+
+                    <span class="status-dot"></span>
+
+                    <span id="availabilityStatus">
+                        Available for opportunities
+                    </span>
+
+                </div>
+
             </div>
 
         </section>
 
 
-        <!-- Skills Section -->
+        <!-- ================================
+             SKILLS SECTION
+        ================================= -->
+
         <section id="skills" class="section skills-section">
 
             <div class="container">
@@ -100,28 +148,47 @@
                 <div class="skills-list">
 
                     <div class="skill-card">
+
                         <h3>HTML</h3>
+
                         <p>Web Structure</p>
+
                     </div>
 
+
                     <div class="skill-card">
+
                         <h3>CSS</h3>
+
                         <p>Styling & Layout</p>
+
                     </div>
 
+
                     <div class="skill-card">
+
                         <h3>JavaScript</h3>
+
                         <p>Web Interactivity</p>
+
                     </div>
 
+
                     <div class="skill-card">
+
                         <h3>React</h3>
+
                         <p>Frontend Development</p>
+
                     </div>
 
+
                     <div class="skill-card">
+
                         <h3>Node.js</h3>
+
                         <p>Backend Development</p>
+
                     </div>
 
                 </div>
@@ -131,7 +198,10 @@
         </section>
 
 
-        <!-- Contact Section -->
+        <!-- ================================
+             CONTACT SECTION
+        ================================= -->
+
         <section id="contact" class="section contact-section">
 
             <div class="container">
@@ -145,9 +215,19 @@
                     send me a message.
                 </p>
 
-                <form class="contact-form">
+
+                <!-- Contact Form -->
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    novalidate
+                >
+
+                    <!-- Name -->
 
                     <div class="form-group">
+
                         <label for="name">Name</label>
 
                         <input
@@ -155,12 +235,20 @@
                             id="name"
                             name="name"
                             placeholder="Enter your name"
-                            required
                         >
+
+                        <small
+                            class="error-message"
+                            id="nameError"
+                        ></small>
+
                     </div>
 
 
+                    <!-- Email -->
+
                     <div class="form-group">
+
                         <label for="email">Email</label>
 
                         <input
@@ -168,12 +256,20 @@
                             id="email"
                             name="email"
                             placeholder="Enter your email"
-                            required
                         >
+
+                        <small
+                            class="error-message"
+                            id="emailError"
+                        ></small>
+
                     </div>
 
 
+                    <!-- Message -->
+
                     <div class="form-group">
+
                         <label for="message">Message</label>
 
                         <textarea
@@ -181,14 +277,32 @@
                             name="message"
                             rows="6"
                             placeholder="Write your message"
-                            required
                         ></textarea>
+
+                        <small
+                            class="error-message"
+                            id="messageError"
+                        ></small>
+
                     </div>
 
 
-                    <button type="submit" class="submit-button">
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
                         Send Message
                     </button>
+
+
+                    <!-- Form Success Message -->
+
+                    <p
+                        id="successMessage"
+                        class="success-message"
+                    ></p>
 
                 </form>
 
@@ -199,7 +313,10 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
     <footer class="footer">
 
         <div class="container">
@@ -207,6 +324,7 @@
             <p>
                 &copy; 2026 Manish Pradhan. All rights reserved.
             </p>
+
 
             <div class="social-links">
 
@@ -232,6 +350,37 @@
 
     </footer>
 
+
+    <!-- Profile Image Modal -->
+
+    <div
+        class="image-modal"
+        id="imageModal"
+    >
+
+        <button
+            type="button"
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close image"
+        >
+            &times;
+        </button>
+
+        <img
+            src="images/profile.jfif"
+            alt="Enlarged profile picture of Manish Pradhan"
+            id="modalImage"
+        >
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
+```
